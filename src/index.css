@@ -43,15 +43,17 @@
     --sidebar-border: 35 15% 88%;
     --sidebar-ring: 30 10% 40%;
 
-    /* NOVACLOU brand tokens — light edition */
-    --nc-bg: #f7f4f0;
-    --nc-bg2: #eeebe5;
-    --nc-line: #ddd8d0;
-    --nc-muted: #a89e92;
-    --nc-body: #3a3530;
-    --nc-heading: #1c1915;
-    --nc-accent: #8a7560;
-    --nc-accent-light: #e8e0d4;
+    /* NOVACLOU brand tokens */
+    --nc-bg: #f6f3ee;
+    --nc-bg2: #ede9e1;
+    --nc-line: #d8d2c8;
+    --nc-muted: #9e9488;
+    --nc-body: #352f28;
+    --nc-heading: #1a1510;
+    --nc-accent: #c45e2e;
+    --nc-accent2: #e8855a;
+    --nc-accent-light: #fae8de;
+    --nc-copper: #b87333;
   }
 }
 

@@ -139,6 +139,8 @@ export default function Index() {
         <>
           {/* HERO */}
           <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 pt-28">
+            {/* accent stripe */}
+            <div className="absolute top-0 left-0 right-0 h-1" style={{ background: "linear-gradient(to right, var(--nc-accent), var(--nc-accent2), var(--nc-copper))" }} />
             <div className="max-w-5xl">
               <p
                 className="text-[11px] tracking-[0.5em] uppercase mb-10 animate-fade-in"
@@ -159,7 +161,7 @@ export default function Index() {
               >
                 Nova
                 <br />
-                <span style={{ color: "var(--nc-accent)" }}>clou.</span>
+                <span style={{ color: "var(--nc-accent)", WebkitTextStroke: "0px" }}>clou.</span>
               </h1>
               <div className="flex flex-col md:flex-row md:items-end gap-8 md:gap-20">
                 <p
@@ -212,7 +214,7 @@ export default function Index() {
           </section>
 
           {/* MANIFESTO */}
-          <section className="px-6 md:px-16 py-24 md:py-32" style={{ background: "var(--nc-bg2)" }}>
+          <section className="px-6 md:px-16 py-24 md:py-32" style={{ background: "var(--nc-accent-light)", borderTop: "3px solid var(--nc-accent)" }}>
             <div className="max-w-2xl">
               <p
                 className="font-light leading-tight"
@@ -325,9 +327,9 @@ export default function Index() {
                   <button
                     onClick={() => setStep("checkout")}
                     className="flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase px-8 py-4 transition-all duration-300"
-                    style={{ background: "var(--nc-heading)", color: "var(--nc-bg)" }}
-                    onMouseEnter={(e) => (e.currentTarget.style.background = "var(--nc-accent)")}
-                    onMouseLeave={(e) => (e.currentTarget.style.background = "var(--nc-heading)")}
+                    style={{ background: "var(--nc-accent)", color: "#fff" }}
+                    onMouseEnter={(e) => (e.currentTarget.style.background = "var(--nc-accent2)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.background = "var(--nc-accent)")}
                   >
                     Оформить заказ
                     <Icon name="ArrowRight" size={13} />
@@ -409,9 +411,9 @@ export default function Index() {
                 <button
                   type="submit"
                   className="flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase px-8 py-4 transition-all duration-300"
-                  style={{ background: "var(--nc-heading)", color: "var(--nc-bg)" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = "var(--nc-accent)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = "var(--nc-heading)")}
+                  style={{ background: "var(--nc-accent)", color: "#fff" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = "var(--nc-accent2)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = "var(--nc-accent)")}
                 >
                   Подтвердить
                   <Icon name="Check" size={13} />
@@ -472,7 +474,7 @@ function ProductCard({
         {product.tag && (
           <div
             className="absolute top-4 left-4 z-10 text-[9px] tracking-[0.3em] uppercase px-2 py-1"
-            style={{ background: "var(--nc-heading)", color: "var(--nc-bg)" }}
+            style={{ background: "var(--nc-accent)", color: "#fff" }}
           >
             {product.tag}
           </div>
