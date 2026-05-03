@@ -200,24 +200,33 @@ export default function Index() {
                 Наши преимущества
               </h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px" style={{ background: "var(--nc-line)" }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                { icon: "Layers", title: "Промышленные\nматериалы", desc: "Баллистический нейлон, кордура 1000D, технический брезент — только то, что выдержит всё." },
-                { icon: "Wrench", title: "Ручная\nсборка", desc: "Каждое изделие собрано вручную. Никакого конвейера. Только мастер и материал." },
-                { icon: "Shield", title: "Гарантия\n2 года", desc: "Мы уверены в качестве каждого шва и каждой фурнитуры. Гарантия без условий." },
-                { icon: "Truck", title: "Доставка\nпо России", desc: "Отправляем в любую точку страны. Бережная упаковка, трекинг на каждом этапе." },
+                { icon: "PackageOpen", title: "Промышленные материалы", desc: "Баллистический нейлон, кордура 1000D, технический брезент — только то, что выдержит всё." },
+                { icon: "HandMetal", title: "Ручная сборка", desc: "Каждое изделие собрано вручную. Никакого конвейера. Только мастер и материал." },
+                { icon: "ShieldCheck", title: "Гарантия 2 года", desc: "Мы уверены в качестве каждого шва и каждой фурнитуры. Гарантия без условий." },
+                { icon: "MapPin", title: "Доставка по России", desc: "Отправляем в любую точку страны. Бережная упаковка, трекинг на каждом этапе." },
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="flex flex-col gap-5 p-8 group transition-colors duration-300"
-                  style={{ background: "var(--nc-bg)" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = "var(--nc-accent-light)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = "var(--nc-bg)")}
+                  className="flex flex-col items-center text-center gap-6 p-10 transition-all duration-300"
+                  style={{ background: "var(--nc-bg)", border: "1px solid transparent" }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "var(--nc-accent-light)";
+                    e.currentTarget.style.borderColor = "var(--nc-line)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "var(--nc-bg)";
+                    e.currentTarget.style.borderColor = "transparent";
+                  }}
                 >
-                  <div className="w-10 h-10 flex items-center justify-center" style={{ border: "1px solid var(--nc-line)" }}>
-                    <Icon name={item.icon as "Layers"} size={18} style={{ color: "var(--nc-accent)" }} />
+                  <div
+                    className="w-20 h-20 flex items-center justify-center rounded-full"
+                    style={{ background: "var(--nc-accent-light)", border: "1.5px solid var(--nc-line)" }}
+                  >
+                    <Icon name={item.icon as "PackageOpen"} size={36} style={{ color: "var(--nc-accent)" }} />
                   </div>
-                  <h3 className="font-light leading-tight" style={{ fontFamily: "Cormorant, serif", fontSize: "1.35rem", color: "var(--nc-heading)", whiteSpace: "pre-line" }}>
+                  <h3 className="font-light leading-snug" style={{ fontFamily: "Cormorant, serif", fontSize: "1.45rem", color: "var(--nc-heading)" }}>
                     {item.title}
                   </h3>
                   <p className="text-sm leading-relaxed" style={{ color: "var(--nc-muted)" }}>
