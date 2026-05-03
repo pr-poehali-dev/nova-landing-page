@@ -69,7 +69,7 @@ export default function Index() {
       {/* NAV */}
       <nav
         className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-16 py-6"
-        style={{ background: "rgba(15,15,15,0.92)", backdropFilter: "blur(16px)", borderBottom: "1px solid var(--nc-line)" }}
+        style={{ background: "rgba(248,245,241,0.92)", backdropFilter: "blur(16px)", borderBottom: "1px solid var(--nc-line)" }}
       >
         <button
           onClick={() => { setStep("catalog"); setMenuOpen(false); }}
@@ -139,7 +139,7 @@ export default function Index() {
         <>
           {/* HERO */}
           <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 pt-28">
-            <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "repeating-linear-gradient(0deg,transparent,transparent 60px,var(--nc-accent) 60px,var(--nc-accent) 61px),repeating-linear-gradient(90deg,transparent,transparent 60px,var(--nc-accent) 60px,var(--nc-accent) 61px)" }} />
+            <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 60% at 60% 40%, var(--nc-accent-light) 0%, transparent 70%)", opacity: 0.7 }} />
             <div className="max-w-5xl">
               <p
                 className="text-[11px] tracking-[0.5em] uppercase mb-10 animate-fade-in"
@@ -188,6 +188,43 @@ export default function Index() {
               <span className="text-[9px] tracking-[0.4em] uppercase" style={{ writingMode: "vertical-rl", color: "var(--nc-line)" }}>
                 SS 2026
               </span>
+            </div>
+          </section>
+
+          <div style={{ height: "1px", background: "var(--nc-line)", margin: "0 1.5rem" }} />
+
+          {/* ADVANTAGES */}
+          <section className="px-6 md:px-16 py-20 md:py-28" style={{ background: "var(--nc-bg2)" }}>
+            <div className="flex items-baseline justify-between mb-14">
+              <h2 className="font-light" style={{ fontFamily: "Cormorant, serif", fontSize: "clamp(1.8rem, 3.5vw, 3rem)", color: "var(--nc-heading)" }}>
+                Наши преимущества
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px" style={{ background: "var(--nc-line)" }}>
+              {[
+                { icon: "Layers", title: "Промышленные\nматериалы", desc: "Баллистический нейлон, кордура 1000D, технический брезент — только то, что выдержит всё." },
+                { icon: "Wrench", title: "Ручная\nсборка", desc: "Каждое изделие собрано вручную. Никакого конвейера. Только мастер и материал." },
+                { icon: "Shield", title: "Гарантия\n2 года", desc: "Мы уверены в качестве каждого шва и каждой фурнитуры. Гарантия без условий." },
+                { icon: "Truck", title: "Доставка\nпо России", desc: "Отправляем в любую точку страны. Бережная упаковка, трекинг на каждом этапе." },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="flex flex-col gap-5 p-8 group transition-colors duration-300"
+                  style={{ background: "var(--nc-bg)" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = "var(--nc-accent-light)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = "var(--nc-bg)")}
+                >
+                  <div className="w-10 h-10 flex items-center justify-center" style={{ border: "1px solid var(--nc-line)" }}>
+                    <Icon name={item.icon as "Layers"} size={18} style={{ color: "var(--nc-accent)" }} />
+                  </div>
+                  <h3 className="font-light leading-tight" style={{ fontFamily: "Cormorant, serif", fontSize: "1.35rem", color: "var(--nc-heading)", whiteSpace: "pre-line" }}>
+                    {item.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "var(--nc-muted)" }}>
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
             </div>
           </section>
 
@@ -326,9 +363,9 @@ export default function Index() {
                   <button
                     onClick={() => setStep("checkout")}
                     className="flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase px-8 py-4 transition-all duration-300"
-                    style={{ background: "var(--nc-heading)", color: "var(--nc-bg)" }}
-                    onMouseEnter={(e) => (e.currentTarget.style.background = "var(--nc-accent)")}
-                    onMouseLeave={(e) => (e.currentTarget.style.background = "var(--nc-heading)")}
+                    style={{ background: "var(--nc-accent)", color: "#fff" }}
+                    onMouseEnter={(e) => (e.currentTarget.style.background = "var(--nc-accent2)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.background = "var(--nc-accent)")}
                   >
                     Оформить заказ
                     <Icon name="ArrowRight" size={13} />
@@ -410,9 +447,9 @@ export default function Index() {
                 <button
                   type="submit"
                   className="flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase px-8 py-4 transition-all duration-300"
-                  style={{ background: "var(--nc-heading)", color: "var(--nc-bg)" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = "var(--nc-accent)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = "var(--nc-heading)")}
+                  style={{ background: "var(--nc-accent)", color: "#fff" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = "var(--nc-accent2)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = "var(--nc-accent)")}
                 >
                   Подтвердить
                   <Icon name="Check" size={13} />
