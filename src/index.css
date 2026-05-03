@@ -4,53 +4,54 @@
 
 @layer base {
   :root {
-    --background: 0 0% 6%;
-    --foreground: 40 15% 90%;
+    --background: 40 20% 97%;
+    --foreground: 30 10% 15%;
 
-    --card: 0 0% 9%;
-    --card-foreground: 40 15% 90%;
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 15%;
 
-    --popover: 0 0% 9%;
-    --popover-foreground: 40 15% 90%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 15%;
 
-    --primary: 40 15% 90%;
-    --primary-foreground: 0 0% 6%;
+    --primary: 30 10% 15%;
+    --primary-foreground: 40 20% 97%;
 
-    --secondary: 0 0% 13%;
-    --secondary-foreground: 40 15% 90%;
+    --secondary: 40 15% 93%;
+    --secondary-foreground: 30 10% 15%;
 
-    --muted: 0 0% 13%;
-    --muted-foreground: 0 0% 50%;
+    --muted: 40 15% 93%;
+    --muted-foreground: 30 8% 50%;
 
-    --accent: 0 0% 16%;
-    --accent-foreground: 40 15% 90%;
+    --accent: 40 15% 93%;
+    --accent-foreground: 30 10% 15%;
 
-    --destructive: 0 62.8% 40%;
-    --destructive-foreground: 40 15% 90%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 40 20% 97%;
 
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 40 15% 70%;
+    --border: 35 15% 88%;
+    --input: 35 15% 88%;
+    --ring: 30 10% 40%;
 
     --radius: 0rem;
 
-    --sidebar-background: 0 0% 6%;
-    --sidebar-foreground: 40 15% 90%;
-    --sidebar-primary: 40 15% 90%;
-    --sidebar-primary-foreground: 0 0% 6%;
-    --sidebar-accent: 0 0% 13%;
-    --sidebar-accent-foreground: 40 15% 90%;
-    --sidebar-border: 0 0% 18%;
-    --sidebar-ring: 40 15% 70%;
+    --sidebar-background: 40 20% 97%;
+    --sidebar-foreground: 30 10% 15%;
+    --sidebar-primary: 30 10% 15%;
+    --sidebar-primary-foreground: 40 20% 97%;
+    --sidebar-accent: 40 15% 93%;
+    --sidebar-accent-foreground: 30 10% 15%;
+    --sidebar-border: 35 15% 88%;
+    --sidebar-ring: 30 10% 40%;
 
-    /* NOVACLOU brand tokens */
-    --nc-charcoal: #0f0f0f;
-    --nc-steel: #1c1c1c;
-    --nc-iron: #2a2a2a;
-    --nc-chrome: #888888;
-    --nc-light: #e8e0d4;
-    --nc-white: #f5f0ea;
-    --nc-accent: #c8b89a;
+    /* NOVACLOU brand tokens — light edition */
+    --nc-bg: #f7f4f0;
+    --nc-bg2: #eeebe5;
+    --nc-line: #ddd8d0;
+    --nc-muted: #a89e92;
+    --nc-body: #3a3530;
+    --nc-heading: #1c1915;
+    --nc-accent: #8a7560;
+    --nc-accent-light: #e8e0d4;
   }
 }
 
@@ -60,10 +61,9 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--nc-bg);
+    color: var(--nc-body);
     font-family: "IBM Plex Sans", sans-serif;
-    background-color: var(--nc-charcoal);
-    color: var(--nc-light);
   }
 
   h1,
@@ -71,63 +71,8 @@
   h3,
   h4 {
     font-family: "Cormorant", serif;
+    color: var(--nc-heading);
   }
-}
-
-@layer utilities {
-  .nc-border {
-    border-color: var(--nc-iron);
-  }
-
-  .text-nc-accent {
-    color: var(--nc-accent);
-  }
-
-  .bg-nc-steel {
-    background-color: var(--nc-steel);
-  }
-
-  .bg-nc-iron {
-    background-color: var(--nc-iron);
-  }
-
-  .text-nc-chrome {
-    color: var(--nc-chrome);
-  }
-
-  .text-nc-light {
-    color: var(--nc-light);
-  }
-
-  .text-nc-white {
-    color: var(--nc-white);
-  }
-
-  .border-nc-iron {
-    border-color: var(--nc-iron);
-  }
-
-  .border-nc-chrome {
-    border-color: var(--nc-chrome);
-  }
-
-  .border-nc-accent {
-    border-color: var(--nc-accent);
-  }
-}
-
-/* Noise texture overlay */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 
 /* Scroll bar */
@@ -135,8 +80,8 @@ body::before {
   width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--nc-charcoal);
+  background: var(--nc-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--nc-iron);
+  background: var(--nc-line);
 }
