@@ -69,7 +69,7 @@ export default function Index() {
       {/* NAV */}
       <nav
         className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-16 py-6"
-        style={{ background: "rgba(247,244,240,0.88)", backdropFilter: "blur(16px)", borderBottom: "1px solid var(--nc-line)" }}
+        style={{ background: "rgba(15,15,15,0.92)", backdropFilter: "blur(16px)", borderBottom: "1px solid var(--nc-line)" }}
       >
         <button
           onClick={() => { setStep("catalog"); setMenuOpen(false); }}
@@ -105,7 +105,7 @@ export default function Index() {
             {cartCount > 0 && (
               <span
                 className="absolute -top-2 -right-2 w-4 h-4 flex items-center justify-center text-[10px] font-medium"
-                style={{ background: "var(--nc-accent)", color: "#fff", borderRadius: "50%" }}
+                style={{ background: "var(--nc-accent)", color: "var(--nc-bg)", borderRadius: "50%" }}
               >
                 {cartCount}
               </span>
@@ -139,8 +139,7 @@ export default function Index() {
         <>
           {/* HERO */}
           <section className="relative min-h-screen flex flex-col justify-center px-6 md:px-16 pt-28">
-            {/* accent stripe */}
-            <div className="absolute top-0 left-0 right-0 h-1" style={{ background: "linear-gradient(to right, var(--nc-accent), var(--nc-accent2), var(--nc-copper))" }} />
+            <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "repeating-linear-gradient(0deg,transparent,transparent 60px,var(--nc-accent) 60px,var(--nc-accent) 61px),repeating-linear-gradient(90deg,transparent,transparent 60px,var(--nc-accent) 60px,var(--nc-accent) 61px)" }} />
             <div className="max-w-5xl">
               <p
                 className="text-[11px] tracking-[0.5em] uppercase mb-10 animate-fade-in"
@@ -214,7 +213,7 @@ export default function Index() {
           </section>
 
           {/* MANIFESTO */}
-          <section className="px-6 md:px-16 py-24 md:py-32" style={{ background: "var(--nc-accent-light)", borderTop: "3px solid var(--nc-accent)" }}>
+          <section className="px-6 md:px-16 py-24 md:py-32" style={{ background: "var(--nc-accent-light)", borderTop: "1px solid var(--nc-line)" }}>
             <div className="max-w-2xl">
               <p
                 className="font-light leading-tight"
@@ -327,9 +326,9 @@ export default function Index() {
                   <button
                     onClick={() => setStep("checkout")}
                     className="flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase px-8 py-4 transition-all duration-300"
-                    style={{ background: "var(--nc-accent)", color: "#fff" }}
-                    onMouseEnter={(e) => (e.currentTarget.style.background = "var(--nc-accent2)")}
-                    onMouseLeave={(e) => (e.currentTarget.style.background = "var(--nc-accent)")}
+                    style={{ background: "var(--nc-heading)", color: "var(--nc-bg)" }}
+                    onMouseEnter={(e) => (e.currentTarget.style.background = "var(--nc-accent)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.background = "var(--nc-heading)")}
                   >
                     Оформить заказ
                     <Icon name="ArrowRight" size={13} />
@@ -411,9 +410,9 @@ export default function Index() {
                 <button
                   type="submit"
                   className="flex items-center gap-3 text-[11px] tracking-[0.3em] uppercase px-8 py-4 transition-all duration-300"
-                  style={{ background: "var(--nc-accent)", color: "#fff" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = "var(--nc-accent2)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = "var(--nc-accent)")}
+                  style={{ background: "var(--nc-heading)", color: "var(--nc-bg)" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = "var(--nc-accent)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = "var(--nc-heading)")}
                 >
                   Подтвердить
                   <Icon name="Check" size={13} />
